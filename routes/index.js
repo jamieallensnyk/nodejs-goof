@@ -200,6 +200,21 @@ exports.destroy = function (req, res, next) {
   });
 };
 
+/// Clears the contents of the TODO item.
+exports.clear = function (req, res, next) {
+  const id = req.params.id;
+  Todo.findById(id, function (err, todo) {
+    if (err) return next(err);
+
+    todo.content = '';
+    todo.save(function (err, todo, count) {
+      if (err) return next(err);
+
+      res.redirect('/');
+    });
+  });
+};
+
 exports.edit = function (req, res, next) {
   Todo.
     find({}).
