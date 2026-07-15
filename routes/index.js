@@ -86,6 +86,7 @@ exports.get_account_details = function(req, res, next) {
  	return res.render('account.hbs', profile)
 }
 
+
 exports.save_account_details = function(req, res, next) {
   // get the profile details from the JSON
 	const profile = req.body
