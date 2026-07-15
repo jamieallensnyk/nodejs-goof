@@ -79,8 +79,6 @@ exports.admin = function (req, res, next) {
   });
 };
 
-
-
 exports.save_account_details = function(req, res, next) {
   // get the profile details from the JSON
 	const profile = req.body
